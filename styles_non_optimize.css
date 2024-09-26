@@ -6,16 +6,15 @@ body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #000; /* Couleur de fond sombre */
-  color: #fff; /* Texte en blanc pour moins de contraste */
+  background-color: #f474f4;
+  color: #333;
 }
 
 header {
-  background-color: #ff0000; /* Couleur de fond criarde */
+  background-color: #722d0a;
   color: white;
-  padding: 30px; /* Plus de padding pour occuper de l'espace */
+  padding: 15px;
   text-align: center;
-  text-shadow: 1px 1px 2px black; /* Effet de texte mal lisible */
 }
 
 nav ul {
@@ -25,50 +24,70 @@ nav ul {
 
 nav ul li {
   display: inline;
-  margin-right: 30px; /* Plus d'espace entre les liens */
+  margin-right: 20px;
 }
 
 nav ul li a {
-  color: yellow; /* Mauvais choix de couleur */
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
   text-decoration: underline;
 }
 
 main {
-  padding: 50px; /* Plus de padding */
+  padding: 20px;
 }
 
 section {
-  margin-bottom: 30px;
-  padding: 20px;
-  background-color: #ff6666; /* Fond rouge clair */
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: white;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ombre intense */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.gallery {
+  text-align: center;
 }
 
 .gallery-container {
-  display: flex; /* Flexbox pour aligner les images */
-  justify-content: space-around; /* Espacement non optimal */
-  margin-bottom: 60px;
+  display: flex; /* Utiliser flexbox pour aligner les images */
+  justify-content: center; /* Centrer les images horizontalement */
+  gap: 20px; /* Espacement entre les images */
+  margin-bottom: 40px; /* Ajoute un espace entre les images et le bas */
 }
 
 .image-frame {
-  border: 5px solid #ffcc00; /* Bordure épaisse et criarde */
-  border-radius: 10px;
-  overflow: hidden;
-  width: 250px; /* Largeur plus large */
-  height: 250px; /* Hauteur fixe */
+  border: 2px solid #4CAF50; /* Bordure autour de chaque image */
+  border-radius: 5px; /* Coins arrondis */
+  overflow: hidden; /* Pour cacher tout débordement */
+  width: 200px; /* Largeur fixe pour chaque image */
+  height: 200px; /* Hauteur fixe pour chaque image */
+  display: flex; /* Utiliser flex pour centrer l'image */
+  align-items: center; /* Centrer verticalement l'image */
+  justify-content: center; /* Centrer horizontalement l'image */
 }
 
 .image-frame img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+  width: 100%; /* S'assurer que l'image prend toute la largeur */
+  height: auto; /* Maintenir le ratio d'aspect de l'image */
+  object-fit: cover; /* Remplir le cadre sans déformer l'image */
+  transition: transform 0.2s; /* Animation au survol */
+  animation: pulse 2s infinite; /* Animation de pulsation */
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
 }
 
 footer {
   text-align: center;
-  padding: 15px;
-  background-color: #ff0000; /* Couleur de fond rouge vif */
+  padding: 10px;
+  background-color: #4CAF50;
   color: white;
   position: relative;
   bottom: 0;
@@ -82,20 +101,19 @@ form {
 
 form label {
   margin-top: 10px;
-  color: #ffcc00; /* Mauvais contraste */
 }
 
 form input, form textarea {
-  padding: 12px;
+  padding: 10px;
   margin-top: 5px;
-  border: 2px solid red; /* Mauvais choix de couleur pour le champ */
+  border: 1px solid #ccc;
   border-radius: 4px;
 }
 
 form button {
   margin-top: 10px;
-  padding: 12px;
-  background-color: red; /* Mauvais choix de couleur */
+  padding: 10px;
+  background-color: #4CAF50;
   color: white;
   border: none;
   border-radius: 4px;
@@ -103,15 +121,19 @@ form button {
 }
 
 form button:hover {
-  background-color: darkred; /* Couleur de survol trop foncée */
+  background-color: #45a049;
 }
 
 .form-container {
-  max-width: 500px; /* Largeur maximale trop grande */
-  margin: 0 auto;
-  padding: 30px;
-  background-color: #ffb3b3; /* Fond rouge clair */
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 400px; /* Largeur maximale du conteneur */
+  margin: 0 auto; /* Centre le conteneur horizontalement */
+  padding: 20px; /* Ajoute de l'espace à l'intérieur du conteneur */
+  background-color: white; /* Couleur de fond du conteneur */
+  border: 1px solid #ccc; /* Bordure autour du conteneur */
+  border-radius: 5px; /* Coins arrondis */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre pour donner du relief */
+}
+.form-title {
+  text-align: center; /* Centre le texte du titre */
+  margin-bottom: 20px; /* Ajoute un espace en bas du titre */
 }
